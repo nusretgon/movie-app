@@ -5,3 +5,7 @@ urlpatterns = [
     path("movies",views.movies),
     path("movies/<slug:slug>",views.movie_details)
 ]
+
+
+# localhost = index 
+# localhost/movies = movies 
