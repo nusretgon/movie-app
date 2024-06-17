@@ -1,17 +1,17 @@
-{% extends 'movies/base.html' %} {% load static %} {% block css_files %}
+{% extends 'movies/base.html' %} 
 
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'vendor/slick/slick.min.css' %}"
-/>
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'vendor/slick/slick-theme.min.css' %}"
-/>
+{% load static %} 
 
-{% endblock %} {% block page_title %} Index {% endblock %} {% block content %}
+{% block css_files %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.min.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick-theme.min.css' %}"/>
+
+{% endblock %} 
+
+{% block page_title %} Index {% endblock %} 
+
+{% block content %}
 
 <div id="wrapper">
   {% include 'partials/_sidebar.html' %}
@@ -32,18 +32,13 @@
         </div>
 
         <div class="row">
-          <div class="col-xl-3 col-md-6 mb-4">
-            {% include 'partials/_movie.html' %}
-          </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            {% include 'partials/_movie.html' %}
-          </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            {% include 'partials/_movie.html' %}
-          </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            {% include 'partials/_movie.html' %}
-          </div>
+        
+          {% for movie in movies %}
+            <div class="col-xl-3 col-md-6 mb-4">
+              {% include 'partials/_movie.html' %}
+            </div>
+          {% endfor %}
+         
         </div>
       </div>
     </div>
